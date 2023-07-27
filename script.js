@@ -9,29 +9,36 @@ let newArray = [];
 
 // Returns random password
 function generatePassword() {
+  //resets array to generate new password
+  newArray = [];
+
   if (confirm("Include lowercase letters?")) {
     newArray = [...newArray, ...lowerAlphabet];
   }
   if (confirm("Include upper case letters?")) {
     newArray = [...newArray, ...upperAlphabet];
   }
-
   if (confirm("Include numbers?")) {
     newArray = [...newArray, ...numbers];
   }
-  if (confirm("Include symbols?")) {
+  if (confirm("Include special characters?")) {
     newArray = [...newArray, ...symbols];
   }
 
   //Loops through concatenated array and adds character to pw string
   let newPassword = "";
-  let pwLength = prompt("How long do you want the password? Enter numbers only.");
+  let pwLength = parseInt(prompt("How long do you want the password? Enter numbers between 8 - 128."));
 
-  for (i = 0; i < pwLength; i++) {
-    let randomChar = Math.floor(Math.random() * newArray.length);
-    newPassword = newPassword.concat(newArray[randomChar]);
+  //checks password criteria and user input
+  if ((typeof pwLength !== 'number') || (pwLength < 8 || pwLength > 128)) {
+    alert("Please enter a number between 8 - 128.");
+    newPassword = "Length must be between 8 -128.";
+  } else {
+    for (i = 0; i < pwLength; i++) {
+      let randomChar = Math.floor(Math.random() * newArray.length);
+      newPassword = newPassword.concat(newArray[randomChar]);
+    }
   }
-
   return newPassword;
 }
 
@@ -41,7 +48,6 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
