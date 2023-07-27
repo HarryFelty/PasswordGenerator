@@ -10,37 +10,23 @@ let newArray = [];
 // Returns random password
 function generatePassword() {
   if (confirm("Include lowercase letters?")) {
-    let lwrCase = true;
-    if (lwrCase) {
-      newArray = [...newArray, ...lowerAlphabet];
-    }
-    lwrCase = false;
+    newArray = [...newArray, ...lowerAlphabet];
   }
   if (confirm("Include upper case letters?")) {
-    let upprCase = true;
-    if (upprCase) {
-      newArray = [...newArray, ...upperAlphabet];
-    }
-    upprCase = false;
-  }
-  if (confirm("Include numbers?")) {
-    let num = true;
-    if (num) {
-      newArray = [...newArray, ...numbers];
-    }
-    num = false;
-  }
-  if (confirm("Include symbols?")) {
-    let sym = true;
-    if (sym) {
-      newArray = [...newArray, ...symbols];
-    }
-    sym = false;
+    newArray = [...newArray, ...upperAlphabet];
   }
 
+  if (confirm("Include numbers?")) {
+    newArray = [...newArray, ...numbers];
+  }
+  if (confirm("Include symbols?")) {
+    newArray = [...newArray, ...symbols];
+  }
+
+  //Loops through concatenated array and adds character to pw string
   let newPassword = "";
   let pwLength = prompt("How long do you want the password? Enter numbers only.");
-  //Loops through concatenated array and adds character to pw string
+
   for (i = 0; i < pwLength; i++) {
     let randomChar = Math.floor(Math.random() * newArray.length);
     newPassword = newPassword.concat(newArray[randomChar]);
