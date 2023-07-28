@@ -24,6 +24,16 @@ https://github.com/HarryFelty/PasswordGenerator
 
 
 
+
+
+![Screenshot 2023-07-28 163957](https://github.com/HarryFelty/PasswordGenerator/assets/125701349/64003fef-120c-4bca-8b8f-b389d8c8c0ac)
+
+
+
+
+
+
+
 Note: screen recording did not capture prompts
 
 
