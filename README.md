@@ -17,3 +17,10 @@ N/A
 ## License
 
 Please refer to the LICENSE in the repo.
+
+https://harryfelty.github.io/PasswordGenerator/
+
+https://github.com/HarryFelty/PasswordGenerator
+
+
+[Password Generator.webm](https://github.com/HarryFelty/PasswordGenerator/assets/125701349/80ba447b-bd4d-4088-86d2-a5ad355d3b9c)
